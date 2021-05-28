@@ -1,4 +1,41 @@
 @import url(./normalize.css);
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+// Colors
+$orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+$neutral: hsla(0, 0%, 100%, 0.75);
+$very-light-gray: hsl(0, 0%, 95%);
+
+// Fonts
+$base-font-size: 15px;
+$heading: 'Big Shoulders Display', cursive;
+$base-text: 'Lexend Deca', sans-serif;
+
+// Global Mixins
+@mixin paragraphs {
+    font-size: $base-font-size;
+    font-family: $base-text;
+    font-weight: 400;
+    color: $neutral;
+}
+@mixin heading {
+    font-family: $heading;
+    font-size: 35px;
+    color: $very-light-gray;
+}
+@mixin button($color) {
+    display: flex;
+    height: 75px;
+    width: 120px;
+    border-radius: 10px;
+    color: $color;
+    background: $very-light-gray;
+}
+
+// Start of Code...
+
 
 
 
