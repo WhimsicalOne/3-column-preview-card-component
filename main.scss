@@ -13,6 +13,11 @@ $base-font-size: 15px;
 $heading: 'Big Shoulders Display', cursive;
 $base-text: 'Lexend Deca', sans-serif;
 
+// Sizes
+$mobile: 375px;
+$desktop: 1440px;
+$large-desktop: 1920px;
+
 // Global Mixins
 @mixin paragraphs {
     font-size: $base-font-size;
@@ -25,17 +30,65 @@ $base-text: 'Lexend Deca', sans-serif;
     font-size: 35px;
     color: $very-light-gray;
 }
-@mixin button($color) {
+@mixin color($text-color) {
+    color: $text-color;
+}
+@mixin button {
     display: flex;
     height: 75px;
     width: 120px;
     border-radius: 10px;
-    color: $color;
     background: $very-light-gray;
 }
 
 // Start of Code...
-
+.full-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .section {
+        display: flex;
+        width: 80%;
+        border-radius: 10px;
+        border: 1px solid $dark-cyan;
+        overflow: hidden;
+    }
+}
+.card-wrapper {
+    padding: 50px;
+    .card {
+        color: $neutral;
+        .heading {
+            @include heading;
+        }
+        .paragraph {
+            @include paragraphs;
+        }
+        .button {
+            @include button;
+        }
+    }
+    &.orange {
+        background: $orange;
+        .card .button {
+            @include color($orange);
+        }
+    }
+    &.dark-cyan {
+        background: $dark-cyan;
+        .card .button {
+            @include color($dark-cyan);
+        }
+    }
+    &.very-dark-cyan {
+        background: $very-dark-cyan;
+        .card .button {
+            @include color($very-dark-cyan);
+        }
+    }
+}
 
 
 
